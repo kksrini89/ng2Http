@@ -1,0 +1,38 @@
+<div class="container">
+  <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="username" class="control-label col-sm-2">User Name</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="User Name" name="username" [ngModel]='user.username'>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="control-label col-sm-2">Email</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" placeholder="@gmail.com" name="email" [ngModel]='user.email'>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </div>
+    </div>
+  </form>
+</div>
+
+<hr>
+<h3>Retrieving Data with Http</h3>
+<ul class="list-none">
+  <li *ngFor="let item of users">
+    {{item.name}}
+  </li>
+</ul>
+
+<button (click)="onGetData()" class="btn btn-primary">Get Data</button>
+
+<hr>
+<h3>Http Get Demo</h3>
+
+<div>
+  {{content}}
+</div>
